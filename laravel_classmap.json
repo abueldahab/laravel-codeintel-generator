@@ -1,250 +1,242 @@
 [
   {
     "path": [
-      "Foundation", 
+      "Foundation",
       "Application.php"
-    ], 
-    "class": "Application", 
-    "subclass": "App", 
-    "superclass": "Illuminate\\Foundation\\Application"
-  }, 
+    ],
+    "class": "Application",
+    "subClass": "App",
+    "superClass": "Illuminate\\Foundation\\Application"
+  },
   {
     "path": [
-      "Foundation", 
+      "Foundation",
       "Artisan.php"
-    ], 
-    "class": "Artisan", 
-    "subclass": "Artisan", 
-    "superclass": "Illuminate\\Foundation\\Artisan"
-  }, 
+    ],
+    "class": "Artisan",
+    "subClass": "Artisan",
+    "superClass": "Illuminate\\Foundation\\Artisan"
+  },
   {
-    "class": "Guard", 
-    "subclass": "Auth", 
-    "superclass": "Illuminate\\Auth\\Guard"
-  }, 
+    "class": "Guard",
+    "subClass": "Auth",
+    "superClass": "Illuminate\\Auth\\Guard"
+  },
   {
     "path": [
-      "Store", 
+      "Cache",
       "Store.php"
-    ], 
-    "class": "Store", 
-    "subclass": "Cache", 
-    "superclass": "Illuminate\\Cache\\Store"
-  }, 
+    ],
+    "class": "Store",
+    "subClass": "Cache",
+    "superClass": "Illuminate\\Cache\\Store"
+  },
   {
     "path": [
-      "Config", 
+      "Config",
       "Repository.php"
-    ], 
-    "class": "Repository", 
-    "subclass": "Config", 
-    "superclass": "Illuminate\\Config\\Repository"
-  }, 
+    ],
+    "class": "Repository",
+    "subClass": "Config",
+    "superClass": "Illuminate\\Config\\Repository"
+  },
   {
     "path": [
-      "Controllers", 
+      "Controllers",
       "Controller.php"
-    ], 
-    "class": "Controller", 
-    "subclass": "Controller", 
-    "superclass": "Illuminate\\Routing\\Controllers\\Controller"
-  }, 
+    ],
+    "class": "Controller",
+    "subClass": "Controller",
+    "superClass": "Illuminate\\Routing\\Controllers\\Controller"
+  },
   {
     "path": [
-      "x", 
-      "Cookie.php"
-    ], 
-    "class": "Cookie", 
-    "subclass": "Cookie", 
-    "superclass": "Illuminate\\Cookie\\CookieJar"
-  }, 
+      "Cookie",
+      "CookieJar.php"
+    ],
+    "class": "CookieJar",
+    "subClass": "Cookie",
+    "superClass": "Illuminate\\Cookie\\CookieJar"
+  },
   {
     "path": [
-      "Encryption", 
+      "Encryption",
       "Encrypter.php"
-    ], 
-    "class": "Encrypter", 
-    "subclass": "Crypt", 
-    "superclass": "Illuminate\\Encryption\\Encrypter"
-  }, 
+    ],
+    "class": "Encrypter",
+    "subClass": "Crypt",
+    "superClass": "Illuminate\\Encryption\\Encrypter"
+  },
   {
     "path": [
-      "Database", 
+      "Database",
       "Connection.php"
-    ], 
-    "class": "Connection", 
-    "subclass": "DB", 
-    "superclass": "Illuminate\\Database\\Connection"
-  }, 
+    ],
+    "class": "Connection",
+    "subClass": "DB",
+    "superClass": "Illuminate\\Database\\Connection"
+  },
   {
     "path": [
-      "Eloquent", 
+      "Eloquent",
       "Model.php"
-    ], 
-    "class": "Model", 
-    "subclass": "Eloquent", 
-    "superclass": "Illuminate\\Database\\Eloquent\\Model"
-  }, 
+    ],
+    "class": "Model",
+    "subClass": "Eloquent",
+    "superClass": "Illuminate\\Database\\Eloquent\\Model"
+  },
   {
     "path": [
-      "Events", 
+      "Events",
       "Event.php"
-    ], 
-    "class": "Event", 
-    "subclass": "Event", 
-    "superclass": "Illuminate\\Events\\Event"
-  }, 
+    ],
+    "class": "Event",
+    "subClass": "Event",
+    "superClass": "Illuminate\\Events\\Event"
+  },
   {
     "path": [
-      "Filesystem", 
+      "Filesystem",
       "Filesystem.php"
-    ], 
-    "class": "Filesystem", 
-    "subclass": "File", 
-    "superclass": "Illuminate\\Filesystem\\Filesystem"
-  }, 
+    ],
+    "class": "Filesystem",
+    "subClass": "File",
+    "superClass": "Illuminate\\Filesystem\\Filesystem"
+  },
   {
     "path": [
-      "Hashing", 
+      "Hashing",
       "BcryptHasher.php"
-    ], 
-    "class": "BcryptHasher", 
-    "subclass": "Hash", 
-    "superclass": "Illuminate\\Hashing\\BcryptHasher"
-  }, 
+    ],
+    "class": "BcryptHasher",
+    "subClass": "Hash",
+    "superClass": "Illuminate\\Hashing\\BcryptHasher"
+  },
   {
     "path": [
-      "Http", 
+      "Http",
       "Request.php"
-    ], 
-    "class": "Request", 
-    "subclass": "Input", 
-    "superclass": "Illuminate\\Http\\Request"
-  }, 
+    ],
+    "class": "Request",
+    "subClass": "Input",
+    "duplicateSubClass": "Request",
+    "superClass": "Illuminate\\Http\\Request"
+  },
   {
     "path": [
-      "Translation", 
+      "Translation",
       "Translator.php"
-    ], 
-    "class": "Translator", 
-    "subclass": "Lang", 
-    "superclass": "Illuminate\\Translation\\Translator"
-  }, 
+    ],
+    "class": "Translator",
+    "subClass": "Lang",
+    "superClass": "Illuminate\\Translation\\Translator"
+  },
   {
     "path": [
-      "Log", 
+      "Log",
       "Writer.php"
-    ], 
-    "class": "Writer", 
-    "subclass": "Log", 
-    "superclass": "Illuminate\\Log\\Writer"
-  }, 
+    ],
+    "class": "Writer",
+    "subClass": "Log",
+    "superClass": "Illuminate\\Log\\Writer"
+  },
   {
     "path": [
-      "Mail", 
+      "Mail",
       "Mailer.php"
-    ], 
-    "class": "Mailer", 
-    "subclass": "Mail", 
-    "superclass": "Illuminate\\Mail\\Mailer"
-  }, 
+    ],
+    "class": "Mailer",
+    "subClass": "Mail",
+    "superClass": "Illuminate\\Mail\\Mailer"
+  },
   {
     "path": [
-      "Pagination", 
+      "Pagination",
       "Paginator.php"
-    ], 
-    "class": "Paginator", 
-    "subclass": "Paginator", 
-    "superclass": "Illuminate\\Pagination\\Paginator"
-  }, 
+    ],
+    "class": "Paginator",
+    "subClass": "Paginator",
+    "superClass": "Illuminate\\Pagination\\Paginator"
+  },
   {
     "path": [
-      "Routing", 
+      "Routing",
       "Redirector.php"
-    ], 
-    "class": "Redirector", 
-    "subclass": "Redirect", 
-    "superclass": "Illuminate\\Routing\\Redirector"
-  }, 
+    ],
+    "class": "Redirector",
+    "subClass": "Redirect",
+    "superClass": "Illuminate\\Routing\\Redirector"
+  },
   {
     "path": [
-      "Http", 
-      "Request.php"
-    ], 
-    "class": "Request", 
-    "subclass": "Request", 
-    "superclass": "Illuminate\\Http\\Request"
-  }, 
-  {
-    "path": [
-      "Http", 
+      "Http",
       "Response.php"
-    ], 
-    "class": "Response", 
-    "subclass": "Response", 
-    "superclass": "Illuminate\\Http\\Response"
-  }, 
+    ],
+    "class": "Response",
+    "subClass": "Response",
+    "superClass": "Illuminate\\Http\\Response"
+  },
   {
     "path": [
-      "Redis", 
+      "Redis",
       "Database.php"
-    ], 
-    "class": "Database", 
-    "subclass": "Redis", 
-    "superclass": "Illuminate\\Redis\\Database"
-  }, 
+    ],
+    "class": "Database",
+    "subClass": "Redis",
+    "superClass": "Illuminate\\Redis\\Database"
+  },
   {
     "path": [
-      "Routing", 
+      "Routing",
       "Router.php"
-    ], 
-    "class": "Router", 
-    "subclass": "Route", 
-    "superclass": "Illuminate\\Routing\\Router"
-  }, 
+    ],
+    "class": "Router",
+    "subClass": "Route",
+    "superClass": "Illuminate\\Routing\\Router"
+  },
   {
     "path": [
-      "Schema", 
+      "Schema",
       "Builder.php"
-    ], 
-    "class": "Builder", 
-    "subclass": "Schema", 
-    "superclass": "Illuminate\\Database\\Schema\\Builder"
-  }, 
+    ],
+    "class": "Builder",
+    "subClass": "Schema",
+    "superClass": "Illuminate\\Database\\Schema\\Builder"
+  },
   {
     "path": [
-      "Session", 
+      "Session",
       "Store.php"
-    ], 
-    "class": "Store", 
-    "subclass": "Session", 
-    "superclass": "Illuminate\\Session\\Store"
-  }, 
+    ],
+    "class": "Store",
+    "subClass": "Session",
+    "superClass": "Illuminate\\Session\\Store"
+  },
   {
     "path": [
-      "Routing", 
+      "Routing",
       "UrlGenerator.php"
-    ], 
-    "class": "UrlGenerator", 
-    "subclass": "URL", 
-    "superclass": "Illuminate\\Routing\\UrlGenerator"
-  }, 
+    ],
+    "class": "UrlGenerator",
+    "subClass": "URL",
+    "superClass": "Illuminate\\Routing\\UrlGenerator"
+  },
   {
     "path": [
-      "Validation", 
+      "Validation",
       "Validator.php"
-    ], 
-    "class": "Validator", 
-    "subclass": "Validator", 
-    "superclass": "Illuminate\\Validation\\Factory"
-  }, 
+    ],
+    "class": "Validator",
+    "subClass": "Validator",
+    "superClass": "Illuminate\\Validation\\Factory"
+  },
   {
     "path": [
-      "View", 
+      "View",
       "Environment.php"
-    ], 
-    "class": "Environment", 
-    "subclass": "View", 
-    "superclass": "Illuminate\\View\\Environment"
+    ],
+    "class": "Environment",
+    "subClass": "View",
+    "superClass": "Illuminate\\View\\Environment"
   }
 ]

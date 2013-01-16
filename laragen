@@ -115,7 +115,9 @@ def class_is_allowed(classname, filename):
 
 
 def get_class_name(source_list):
-    return source_list[0]['class'] if len(source_list) > 0 else ''
+    ''' we extract the fourth element because some Laravel source files 
+    may contain multiple class definitions'''
+    return source_list[3]['class'] if len(source_list) > 3 else ''
 
 
 def find_class_map(classname):
@@ -125,15 +127,10 @@ def find_class_map(classname):
             return class_map
     return None
 
-
-def generate_doc_block(classname, source_list):
-    lines = []
-    class_map = find_class_map(classname)
-    if class_map is None:
-        return lines
-
+def generate_elements_doc(elements, subClass, superClass):
+    lines = []    
     lines.append('/**')
-    for elem in source_list:
+    for elem in elements:
         params = '(%s)' % elem['args'] if elem['kind'] == '@method' else ''
         line = ' * ' + '\t'.join([elem['kind'],
                                   'static',
@@ -142,18 +139,33 @@ def generate_doc_block(classname, source_list):
                                   elem['doc']])
         lines.append(line)
 
-    lines.append(' */\n')
-    lines.append('class %s extends %s {}\n\n' % (class_map['subclass'], class_map['superclass']))
+    lines.append(' */\nclass %s extends %s {}\n' % (subClass, superClass))
+    return '\n'.join(lines)
+    
+def generate_doc_block(classname, source_list):
+    lines = []
+    class_map = find_class_map(classname)
+    if class_map is None:
+        return lines
+    
+    lines.append(generate_elements_doc(source_list, class_map['subClass'], class_map['superClass']))
+    
+    duplicateClass = class_map.get('duplicateSubClass')
+    if duplicateClass is not None:
+        lines.append(generate_elements_doc(source_list, duplicateClass, class_map['superClass']))
+
     return lines
 
 
 def process_class_declaration(filename, decl):
     cname = get_class_name(decl)
-    lines = []
+    if cname == 'Store':
+        danda = True
     if class_is_allowed(cname, filename):
         decl = filter_relevant_declarations_only(decl)
-        lines.extend(generate_doc_block(cname, decl))
-    return lines
+        return generate_doc_block(cname, decl)
+    
+    return []
 
 
 def load_class_map():

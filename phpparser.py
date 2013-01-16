@@ -25,13 +25,10 @@ SOFTWARE.
 '''
 
 import os
-import sys
 import re
 import json
 import subprocess
 import tempfile
-import re
-import string
 
 
 _constants = {}
@@ -141,31 +138,31 @@ def get_context(source, point):
     for t in tokens:
         kind, stmt, line = t
         # print kind, stmt, line
-        if kind == 'T_DOUBLE_COLON' and visibility == None:
+        if kind == 'T_DOUBLE_COLON' and visibility is None:
             visibility = 'public'
-        if kind == 'T_DOUBLE_COLON' and operator == None:
+        if kind == 'T_DOUBLE_COLON' and operator is None:
             operator = '::'
-        if kind == 'T_OBJECT_OPERATOR' and operator == None:
+        if kind == 'T_OBJECT_OPERATOR' and operator is None:
             operator = '->'
         if len(context) == 0 and (kind == 'T_DOUBLE_COLON' or kind == 'T_OBJECT_OPERATOR'):
             context.append('')
-        if kind == None and stmt == '(':
+        if kind is None and stmt == '(':
             nest += 1
-        if kind == None and stmt == ')':
+        if kind is None and stmt == ')':
             nest -= 1
-        if kind == None and stmt == '=':
+        if kind is None and stmt == '=':
             break
         if kind == 'T_CONCAT_EQUAL':
             break
         if kind == 'T_PLUS_EQUAL':
             break
-        if kind == None and stmt == ';':
+        if kind is None and stmt == ';':
             break
-        if kind == None and stmt == '.':
+        if kind is None and stmt == '.':
             break
-        if kind == None and stmt == ',':
+        if kind is None and stmt == ',':
             break
-        if kind == None and (stmt == '{' or stmt == '}'):
+        if kind is None and (stmt == '{' or stmt == '}'):
             break
         if kind == 'T_OPEN_TAG':
             break
@@ -173,13 +170,13 @@ def get_context(source, point):
             break
         if nest == 0 and kind == 'T_VARIABLE':
             context.append(stmt)
-            if stmt == '$this' and visibility == None:
+            if stmt == '$this' and visibility is None:
                 visibility = 'all'
-            if visibility == None:
+            if visibility is None:
                 visibility = 'public'
         if nest == 0 and kind == 'T_STRING':
             context.append(stmt)
-            if visibility == None:
+            if visibility is None:
                 visibility = 'public'
         if nest > 0:
             break
@@ -250,7 +247,7 @@ def convert_raw_tokens(raw_tokens):
             t, stmt, line = raw_tokens[i]
             if t == search:
                 return stmt
-            
+
     n = 0
     for t, stmt, line in raw_tokens:
         if t == 'T_WHITESPACE':
@@ -283,7 +280,7 @@ def convert_raw_tokens(raw_tokens):
                 static = False
                 doc = None
                 returns = None
-        elif t == None and stmt == ';' and in_class and nest == 1:
+        elif t is None and stmt == ';' and in_class and nest == 1:
             save()
             visibility = None
             kind = None
@@ -301,7 +298,7 @@ def convert_raw_tokens(raw_tokens):
             static = True
         elif t == 'T_DOC_COMMENT':
             doc = stmt
-        elif t == 'T_VARIABLE' and kind == None and in_class and nest == 1 and name == None:
+        elif t == 'T_VARIABLE' and kind is None and in_class and nest == 1 and name is None:
             kind = 'var'
             name = stmt
             args = []
@@ -383,7 +380,6 @@ def scan_all_files(base_folder, extension='.php'):
             filename, ext = os.path.splitext(name)
             if ext == extension:
                 path = os.path.join(root, name)
-                #sys.stderr.write(path + '\n')
                 item = (os.path.abspath(path), scan_file(path))
                 declarations.append(item)
 
