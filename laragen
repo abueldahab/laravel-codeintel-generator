@@ -127,7 +127,7 @@ def find_class_map(classname):
             return class_map
     return None
 
-def generate_elements_doc(elements, subClass, superClass):
+def generate_class_doc(elements, subClass, superClass):
     lines = []    
     lines.append('/**')
     for elem in elements:
@@ -148,11 +148,11 @@ def generate_doc_block(classname, source_list):
     if class_map is None:
         return lines
     
-    lines.append(generate_elements_doc(source_list, class_map['subClass'], class_map['superClass']))
+    lines.append(generate_class_doc(source_list, class_map['subClass'], class_map['superClass']))
     
     duplicateClass = class_map.get('duplicateSubClass')
     if duplicateClass is not None:
-        lines.append(generate_elements_doc(source_list, duplicateClass, class_map['superClass']))
+        lines.append(generate_class_doc(source_list, duplicateClass, class_map['superClass']))
 
     return lines
 
