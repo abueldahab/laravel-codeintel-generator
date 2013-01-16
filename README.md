@@ -11,12 +11,16 @@ Copyright 2013 Max Ehsan [http://laravelbook.com/](http://laravelbook.com/)
 
 ###Instructions
 
-Run `laragen.py` from your Laravel 4 application root directory:
+Run `laragen` from your Laravel 4 application root directory:
 
-	$ ./laragen.py .
+	$ ./laragen
+
+If you have placed the Laravel framework 4 source code in another location, specify the path in the argument:
+
+	$ ./laragen /path/to/laravel/
 
 To generate IDE helper script for a single Laravel source file, provide the filename in the argument:
 
-	$ ./laragen.py /path/to/Artisan.php
+	$ ./laragen /path/to/Artisan.php
 
 `_ide_helper.php` will be generated in the current directory. Copy the file to your Laravel 4 `app/` folder.
