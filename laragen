@@ -159,8 +159,6 @@ def generate_doc_block(classname, source_list):
 
 def process_class_declaration(filename, decl):
     cname = get_class_name(decl)
-    if cname == 'Store':
-        danda = True
     if class_is_allowed(cname, filename):
         decl = filter_relevant_declarations_only(decl)
         return generate_doc_block(cname, decl)
